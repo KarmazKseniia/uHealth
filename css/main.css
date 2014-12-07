@@ -44,32 +44,23 @@ ul, ol {
 
 
 /* general settings */
-.content-wrapper {
-  position: absolute;
+html, body {
   width: 100%;
   height: 100%;
 }
 
-.content-wrapper .content-container {
+#content-wrapper {
   position: relative;
-  right: 0;
-  width: 100%;
-  height: 100%;
+  min-height: 100%;
+  overflow-x: hidden;
 }
 
-main {
-  position: relative;
-  display: block;
-  width: 100%;
-  height: 100%;
+#content {
+  margin: 0 auto;
+  padding-bottom: 180px;
 }
 
 header {
-  position: fixed;
-  z-index: 10;
-  top: 0;
-  display: block;
-  width: 100%;
   height: 85px;
   background-color: #000;
 }
@@ -78,7 +69,7 @@ header .logo-wrap {
   position: absolute;
   z-index: 11;
   left: 25px;
-  bottom: 0;
+  top: 0;
 }
 
 header .logo-wrap a,
@@ -129,8 +120,9 @@ header .main-nav {
 }
 
 footer {
-  position: relative;
-  display: block;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
   color: #fff;
   background-color: #000;
 }
@@ -201,23 +193,15 @@ footer .footer-block .footer-nav li a {
 
 /* landing page */
 .pg-landing {
-  background: #F5F5DC;
+  background: #000;
 }
 
 .pg-landing .intro-container {
   position: relative;
-  bottom: 0;
-  display: block;
-  width: 100%;
-  height: 100%;
   background: url(../img/pg-landing/arrows.png) center center no-repeat;
 }
 
 .pg-landing .intro-container .girl {
-  position: relative;
-  bottom: 0;
-  display: block;
-  width: 100%;
   height: 100%;
   background: url(../img/pg-landing/sport-girl.png) center center no-repeat;
 }
@@ -225,6 +209,7 @@ footer .footer-block .footer-nav li a {
 .pg-landing .intro-container .girl a {
   display: block;
   position: absolute;
+  color: #fff !important;
 }
 
 .pg-landing .intro-container .girl a.food {
@@ -242,22 +227,5 @@ footer .footer-block .footer-nav li a {
 .pg-landing .intro-container .girl a.health {
   bottom: 5%;
   right: 30%;
-}
-
-
-.pg-landing .intro-container .caption {
-  position: absolute;
-  z-index: 3;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  text-align: center;
-}
-
-.pg-landing .intro-container-food {
-  height: 100%;
-  background: url(../img/pg-landing/healthy-food.jpg) center center/cover no-repeat fixed;
-  -o-background-size: cover;
 }
 /* end landing page */

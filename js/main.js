@@ -8,13 +8,6 @@ var routes = [
     requireLogin: false
   },
   {
-    url: '/sport',
-    state: 'sport',
-    title: 'Спорт',
-    templateUrl: PAGE_URL + 'sport.html',
-    requireLogin: false
-  },
-  {
     url: '/beauty',
     state: 'beauty',
     title: 'Красота',
@@ -40,6 +33,7 @@ var routes = [
 angular.module('uHealth', [
     'ui.router',
     'uHealth.food',
+    'uHealth.sport.service',
     'uHealth.sport',
     'uHealth.beauty',
     'uHealth.health',

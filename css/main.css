@@ -1,0 +1,263 @@
+/* bootstrap */
+ul, ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.white-strip-wrapper {
+  width: 100%;
+  padding: 65px;
+  text-align: center;
+  color: #000;
+  background-color: #fff;
+  background-color: rgba(255, 255, 255,.8);
+}
+
+.vertical-wrapper {
+  font-size: 0;
+  line-height: 1;
+}
+
+.vertical-wrapper:before {
+  display: inline-block;
+  height: 100%;
+  content: '';
+  vertical-align: middle;
+}
+
+.vertical {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.relative {
+  position: relative;
+}
+
+.inline {
+  display: inline-block;
+  vertical-align: top;
+}
+/* end bootstrap */
+
+
+/* general settings */
+.content-wrapper {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.content-wrapper .content-container {
+  position: relative;
+  right: 0;
+  width: 100%;
+  height: 100%;
+}
+
+main {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+header {
+  position: fixed;
+  z-index: 10;
+  top: 0;
+  display: block;
+  width: 100%;
+  height: 85px;
+  background-color: #000;
+}
+
+header .logo-wrap {
+  position: absolute;
+  z-index: 11;
+  left: 25px;
+  bottom: 0;
+}
+
+header .logo-wrap a,
+header .logo-wrap .logo {
+  width: 135px;
+  height: 135px;
+  margin: 0;
+}
+
+header .logo-wrap .logo {
+  -webkit-transition: -webkit-transform .2s ease;
+  -moz-transition: -moz-transform .2s ease;
+  -o-transition: -o-transform .2s ease;
+  transition: transform .2s ease;
+}
+
+header .logo-wrap .logo:hover {
+  -webkit-transform: scale(1.2) rotate(-15deg);
+  -moz-transform: scale(1.2) rotate(-15deg);
+  -ms-transform: scale(1.2) rotate(-15deg);
+  -o-transform: scale(1.2) rotate(-15deg);
+  transform: scale(1.2) rotate(-15deg);
+}
+
+header .main-nav {
+  padding-left: 185px;
+}
+
+.main-nav a {
+  padding: 35px 15px;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1;
+  display: block;
+  -webkit-transition: background-color .2s ease;
+  -moz-transition: background-color .2s ease;
+  -o-transition: background-color .2s ease;
+  transition: background-color .2s ease;
+  text-align: center;
+  text-transform: uppercase;
+  color: #fff;
+}
+
+.main-nav a:hover {
+  color: #fff;
+  text-decoration: none;
+  background-color: #df5757;
+}
+
+footer {
+  position: relative;
+  display: block;
+  color: #fff;
+  background-color: #000;
+}
+
+footer .footer-block {
+  padding: 25px;
+  text-align: center;
+}
+
+footer .footer-block.upper {
+  padding-top: 65px;
+}
+
+footer .footer-block.lower {
+  border-top: 1px solid #797979;
+}
+
+footer .footer-block .logo-container {
+  position: absolute;
+  z-index: 11;
+  top: -40px;
+  right: 0;
+  left: 0;
+}
+
+footer .footer-block .logo-container .logo-wrap {
+  display: block;
+  width: 80px;
+  height: 80px;
+  margin: 0 auto;
+}
+
+footer .footer-block .logo-container .logo-wrap .logo {
+  width: 100%;
+  height: 100%;
+  -webkit-transition: -webkit-transform .2s ease;
+  -moz-transition: -moz-transform .2s ease;
+  -o-transition: -o-transform .2s ease;
+  transition: transform .2s ease;
+}
+
+footer .footer-block .logo-container .logo-wrap .logo:hover {
+  -webkit-transform: scale(1.2) rotate(-15deg);
+  -moz-transform: scale(1.2) rotate(-15deg);
+  -ms-transform: scale(1.2) rotate(-15deg);
+  -o-transform: scale(1.2) rotate(-15deg);
+  transform: scale(1.2) rotate(-15deg);
+}
+
+footer .footer-block .footer-nav li {
+  display: inline-block;
+  padding: 0 10px;
+  vertical-align: top;
+}
+
+footer .footer-block .footer-nav li a {
+  font-size: 14px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #fff;
+}
+
+.padding-footer {
+  padding-bottom: 40px;
+}
+/* end general settings */
+
+
+/* landing page */
+.pg-landing {
+  background: #F5F5DC;
+}
+
+.pg-landing .intro-container {
+  position: relative;
+  bottom: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: url(../img/pg-landing/arrows.png) center center no-repeat;
+}
+
+.pg-landing .intro-container .girl {
+  position: relative;
+  bottom: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: url(../img/pg-landing/sport-girl.png) center center no-repeat;
+}
+
+.pg-landing .intro-container .girl a {
+  display: block;
+  position: absolute;
+}
+
+.pg-landing .intro-container .girl a.food {
+  top: 5%;
+  left: 30%;
+}
+.pg-landing .intro-container .girl a.sport {
+  top: 5%;
+  right: 30%;
+}
+.pg-landing .intro-container .girl a.beauty {
+  bottom: 5%;
+  left: 30%;
+}
+.pg-landing .intro-container .girl a.health {
+  bottom: 5%;
+  right: 30%;
+}
+
+
+.pg-landing .intro-container .caption {
+  position: absolute;
+  z-index: 3;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  text-align: center;
+}
+
+.pg-landing .intro-container-food {
+  height: 100%;
+  background: url(../img/pg-landing/healthy-food.jpg) center center/cover no-repeat fixed;
+  -o-background-size: cover;
+}
+/* end landing page */

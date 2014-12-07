@@ -1,4 +1,4 @@
-var PAGE_URL = '/html/pages/';
+var PAGE_URL = 'html/pages/';
 var routes = [
   {
     url: '/',

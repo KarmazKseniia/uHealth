@@ -5,7 +5,7 @@ angular.module('uHealth.sport.service', [
   .factory('sport',
   [          '$http',
     function ($http) {
-      var exercises = $http.get('/api/api/v1/example').then(function (resp) {
+      var exercises = $http.get('/api/api/v1/exercise').then(function (resp) {
         return resp.data.exercises;
       });
 

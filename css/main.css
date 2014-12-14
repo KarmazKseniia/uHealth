@@ -229,3 +229,28 @@ footer .footer-block .footer-nav li a {
   right: 30%;
 }
 /* end landing page */
+
+
+/* exercise list page */
+.exercise-list .exercise {
+	padding: 15px;
+	cursor: pointer;
+	border: 1px solid #666;
+	margin-bottom: 30px;
+}
+
+.exercise-list .exercise h1,
+.exercise-list .exercise h2 {
+	margin: 0;
+	line-height: 1.5;
+	font-size: 14px;
+}
+
+.exercise-list .exercise h2 {
+	font-size: 12px;
+}
+
+.exercise-list .exercise img {
+	width: 100%;
+}
+/* end exercise list page */

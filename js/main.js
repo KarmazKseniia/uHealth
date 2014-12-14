@@ -89,3 +89,7 @@ angular.module('uHealth', [
 *//*
 
   });*/
+  
+ function log_error(error) {
+	console.log('Error: ' + error);
+ }

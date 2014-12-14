@@ -1,2 +1,15 @@
-Sport list
-    {{ exercises }}
+<div class="container">
+	<section class="exercise-list row">
+		<article data-ng-repeat="exercise in exercises" data-exercise-id="{{ exercise.id }}" class="col-xs-4">
+			<div class="exercise">
+				<div>
+					<h1 data-ng-bind="exercise.title"></h1>
+					<h2 data-ng-bind="exercise.goal"></h2>
+				</div>
+				<div>
+					<img data-ng-src="/api/resources/exercise/{{ exercise.id }}.jpg" />
+				</div>
+			</div>
+		</article>
+	</section>
+</div>

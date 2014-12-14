@@ -5,8 +5,12 @@ angular.module('uHealth.sport.service', [
   .factory('sport',
   [          '$http',
     function ($http) {
-      var exercises = $http.get('/api/api/v1/exercise').then(function (resp) {
-        return resp.data.exercises;
+      var exercises = $http.get('/api/api/v1/exercise/list').then(function (resp) {
+		if (resp.data.error) {
+			log_error(resp.data.error);
+			return null;
+		}
+        return resp.data;
       });
 
       var factory = {};

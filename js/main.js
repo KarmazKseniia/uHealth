@@ -32,6 +32,7 @@ var routes = [
 
 angular.module('uHealth', [
     'ui.router',
+    'uHealth.food.service',
     'uHealth.food',
     'uHealth.sport.service',
     'uHealth.sport',

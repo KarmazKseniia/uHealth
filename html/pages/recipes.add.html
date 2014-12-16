@@ -1,18 +1,21 @@
 <form>
-	<h2>Добавление рецепта</h2>
+  <h2>Добавление рецепта</h2>
 
-	<p>Ингридиенты:</p>
-	
-	<div data-ng-repeat="ingredient in ingredients">
-		<input type="text" data-ng-model="ingredient.title" placeholder="Название продукта" data-ng-focus="showProductList = true" />
-		<input type="text" data-ng-model="ingredient.amount" placeholder="Количество" />
-		<div data-ng-show="showProductList && ingredient.title.length > 2" data-ng-include="'html/components/product-list.html'"></div>
-	</div>
-	<input type="button" value="Добавить продукт" data-ng-click="addIngredient()" />
+  <p>Ингридиенты:</p>
 
-	<p>Приготовление:</p>
-	<textarea data-ng-model="execution" placeholder="Способ приготовления"></textarea>
+  <div data-ng-repeat="ingredient in ingredients">
+    <input type="text" data-ng-model="ingredient.title" placeholder="Название продукта"
+           data-ng-focus="showProductList = true"/>
+    <input type="text" data-ng-model="ingredient.amount" placeholder="Количество"/>
 
-	<p>Категории:</p>
-	<input name="execution" placeholder="Категории"></textarea>||tags input
+    <div data-ng-show="showProductList && ingredient.title.length > 2"
+         data-ng-include="'html/components/product-list.html'"></div>
+  </div>
+  <input type="button" value="Добавить продукт" data-ng-click="addIngredient()"/>
+
+  <p>Приготовление:</p>
+  <textarea data-ng-model="execution" placeholder="Способ приготовления"></textarea>
+
+  <p>Категории:</p>
+  <input name="execution" placeholder="Категории"></textarea>||tags input
 </form>

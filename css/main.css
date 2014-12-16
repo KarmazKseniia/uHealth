@@ -11,7 +11,7 @@ ul, ol {
   text-align: center;
   color: #000;
   background-color: #fff;
-  background-color: rgba(255, 255, 255,.8);
+  background-color: rgba(255, 255, 255, .8);
 }
 
 .vertical-wrapper {
@@ -40,8 +40,8 @@ ul, ol {
   display: inline-block;
   vertical-align: top;
 }
-/* end bootstrap */
 
+/* end bootstrap */
 
 /* general settings */
 html, body {
@@ -188,8 +188,8 @@ footer .footer-block .footer-nav li a {
 .padding-footer {
   padding-bottom: 40px;
 }
-/* end general settings */
 
+/* end general settings */
 
 /* landing page */
 .pg-landing {
@@ -216,41 +216,45 @@ footer .footer-block .footer-nav li a {
   top: 5%;
   left: 30%;
 }
+
 .pg-landing .intro-container .girl a.sport {
   top: 5%;
   right: 30%;
 }
+
 .pg-landing .intro-container .girl a.beauty {
   bottom: 5%;
   left: 30%;
 }
+
 .pg-landing .intro-container .girl a.health {
   bottom: 5%;
   right: 30%;
 }
-/* end landing page */
 
+/* end landing page */
 
 /* exercise list page */
 .exercise-list .exercise {
-	padding: 15px;
-	cursor: pointer;
-	border: 1px solid #666;
-	margin-bottom: 30px;
+  padding: 15px;
+  cursor: pointer;
+  border: 1px solid #666;
+  margin-bottom: 30px;
 }
 
 .exercise-list .exercise h1,
 .exercise-list .exercise h2 {
-	margin: 0;
-	line-height: 1.5;
-	font-size: 14px;
+  margin: 0;
+  line-height: 1.5;
+  font-size: 14px;
 }
 
 .exercise-list .exercise h2 {
-	font-size: 12px;
+  font-size: 12px;
 }
 
 .exercise-list .exercise img {
-	width: 100%;
+  width: 100%;
 }
+
 /* end exercise list page */

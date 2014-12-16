@@ -4,9 +4,9 @@
 	<p>Ингридиенты:</p>
 	
 	<div data-ng-repeat="ingredient in ingredients">
-		<input type="text" data-ng-model="ingredient.name" placeholder="Название продукта" data-ng-focus="showProductList = true" data-ng-blur="showProductList = false" />
+		<input type="text" data-ng-model="ingredient.title" placeholder="Название продукта" data-ng-focus="showProductList = true" />
 		<input type="text" data-ng-model="ingredient.amount" placeholder="Количество" />
-		<div data-ng-show="showProductList && ingredient.name.length > 2" data-ng-include="'html/components/product-list.html'"></div>
+		<div data-ng-show="showProductList && ingredient.title.length > 2" data-ng-include="'html/components/product-list.html'"></div>
 	</div>
 	<input type="button" value="Добавить продукт" data-ng-click="addIngredient()" />
 

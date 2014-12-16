@@ -40,6 +40,11 @@ angular.module('uHealth.food', [
 					$scope.addIngredient = function() {
 						$scope.ingredients.push({});
 					}
+					
+					$scope.selectProduct = function() {
+						angular.extend(this.$parent.ingredient, this.p);
+						this.showProductList = false;
+					}
 				}]
             });
       }

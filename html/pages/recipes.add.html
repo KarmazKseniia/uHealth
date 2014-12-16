@@ -1,7 +1,10 @@
-<form>
+<form data-ng-controller="addRecipeController" data-ng-submit="saveRecipe()">
   <h2>Добавление рецепта</h2>
 
+  <input type="text" placeholder="Название блюда" data-ng-model="recipe.title"/>
+
   <p>Ингридиенты:</p>
+
 
   <div data-ng-repeat="ingredient in ingredients">
     <input type="text" data-ng-model="ingredient.title" placeholder="Название продукта"
@@ -13,9 +16,17 @@
   </div>
   <input type="button" value="Добавить продукт" data-ng-click="addIngredient()"/>
 
-  <p>Приготовление:</p>
-  <textarea data-ng-model="execution" placeholder="Способ приготовления"></textarea>
+  <div>
+    <textarea data-ng-model="recipe.description" placeholder="Описание"></textarea>
+  </div>
 
-  <p>Категории:</p>
-  <input name="execution" placeholder="Категории"></textarea>||tags input
+  <p>Приготовление:</p>
+
+  <div>
+    <textarea data-ng-model="recipe.steps" placeholder="Способ приготовления"></textarea>
+  </div>
+
+  <!--<p>Категории:</p>-->
+  <!--<input name="execution" placeholder="Категории"></textarea>||tags input-->
+  <input type="submit" value="Добавить рецепт" />
 </form>

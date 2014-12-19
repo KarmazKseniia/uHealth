@@ -48,6 +48,20 @@ angular.module('uHealth', [
         // to active whenever 'contacts.list' or one of its decendents is active.
         $rootScope.$state = $state;
         $rootScope.$stateParams = $stateParams;
+		
+		$rootScope.$on('$stateChangeStart', function(event, toState, toParams, fromState, fromParams) {
+		  if (toState.resolve) {
+			console.log('show');
+			//$rootScope.showSpinner();
+		  }
+		});
+		
+		$rootScope.$on('$stateChangeSuccess', function(event, toState, toParams, fromState, fromParams) {
+		  if (toState.resolve) {
+		    console.log('hide');
+			//$scope.hideSpinner();
+		  }
+		});
       }
     ]
   )

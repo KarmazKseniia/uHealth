@@ -1,3 +1,4 @@
+<div class="pg-recipe-add">
 <form data-ng-controller="addRecipeController" data-ng-submit="saveRecipe()" role="form" novalidate>
   <h2>Добавление рецепта</h2>
 
@@ -16,11 +17,11 @@
 	    <input class="form-control" type="text" data-ng-model="ingredient.amount" placeholder="Количество"/>
 	  </div>
 	  <div class="col-xs-1 text-right">
-	    <input class="btn btn-default" type="button" value="-" />
+		<i class="remove-ingredient glyphicon glyphicon-remove-circle" title="Удалить ингридиент" data-ng-click="removeIngredient()"></i>
 	  </div>
 	  <div data-ng-show="showProductList && ingredient.title.length > 2" data-ng-include="'html/components/product-list.html'"></div>
 	</div>
-	<input class="btn btn-default" type="button" value="Добавить продукт" data-ng-click="addIngredient()"/>
+	<input class="btn btn-default" type="button" value="Добавить ингридиент" data-ng-click="addIngredient()"/>
   </div>
   
   <div class="form-group">
@@ -38,3 +39,4 @@
   <!--<input name="execution" placeholder="Категории"></textarea>||tags input-->
   <input class="btn btn-primary btn-lg margin-t-10" type="submit" value="Добавить рецепт" />
 </form>
+</div>

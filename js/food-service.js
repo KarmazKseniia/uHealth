@@ -21,11 +21,16 @@ angular.module('uHealth.food.service', [
 		  	url: urlBase,
 		  	data: product,
 		  	headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
-		  })
+		  });
         };
 
         factory.update = function (product) {
-          return $http.put(urlBase + '/' + product.id, product)
+		  return $http({
+		  	method: 'put',
+		  	url: urlBase + '/' + product.id,
+		  	data: product,
+		  	headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
+		  });
         };
 
         factory.delete = function (id) {
@@ -81,7 +86,7 @@ angular.module('uHealth.food.service', [
 		  	url: urlBase,
 		  	data: recipe,
 		  	headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
-		  })
+		  });
         };
 
         factory.update = function (recipe) {

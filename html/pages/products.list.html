@@ -1,0 +1,23 @@
+<div class="pg-product-list">
+<table class="table table-striped">
+  <tr>
+	<th>Название продукта</th>
+	<th data-ng-repeat="param in productParams" data-ng-bind="param.title"></th>
+	<th></th>
+  </tr>
+  <tr data-ng-repeat="product in products">
+	<td>
+	  <span data-ng-bind="product.title" data-ng-show="!product.editMode"></span>
+	  <input class="form-control" type="text" placeholder="Название продукта" data-ng-model="product.title" data-ng-show="product.editMode" />
+	</td>
+	<td data-ng-repeat="param in productParams">
+	  <span data-ng-bind="product[param.name]" data-ng-show="!product.editMode"></span>
+	  <input class="form-control" type="text" placeholder="Название продукта" data-ng-model="product[param.name]" data-ng-show="product.editMode" />
+	</td>
+	<td class="edit-button-container text-right">
+	  <i class="glyphicon glyphicon-pencil pointer" data-ng-click="editProduct()" data-ng-show="!product.editMode"></i>
+	  <i class="glyphicon glyphicon-ok-circle pointer" data-ng-click="saveEditProduct()" data-ng-show="product.editMode"></i>
+	</td>
+  </tr>
+</table>
+</div>

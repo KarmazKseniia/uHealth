@@ -41,6 +41,10 @@ ul, ol {
   vertical-align: top;
 }
 
+.pointer {
+  cursor: pointer;
+}
+
 .text-right {
   text-align: right;
 }
@@ -261,6 +265,17 @@ footer .footer-block .footer-nav li a {
 }
 
 /* end landing page */
+
+
+/* recipe add page */
+.pg-product-list .edit-button-container .glyphicon.glyphicon-ok-circle,
+.pg-recipe-add .remove-ingredient {
+  font-size: 16px;
+  line-height: 2;
+  cursor: pointer;
+}
+/* end recipe add page */
+
 
 /* exercise list page */
 .exercise-list .exercise {

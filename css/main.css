@@ -64,6 +64,10 @@ ul, ol {
 . margin-t-10 {
   margin-top: 10px;
 }
+
+.table {
+  font-size: 14px;
+}
 /* end bootstrap */
 
 /* general settings */

@@ -1,0 +1,17 @@
+<form data-ng-controller="addProductController" data-ng-submit="saveProduct()" role="form" novalidate>
+  <h2>Добавление продукта</h2>
+
+  <div class="form-group form-group-lg">
+	<label>Название продукта</label>
+	<input class="form-control" type="text" placeholder="Название продукта" data-ng-model="product.title"/>
+  </div>
+
+  <div class="row">
+    <div class="col-xs-3 form-group" data-ng-repeat="param in productParams">
+      <label data-ng-bind="param.title"></label>
+  	  <input class="form-control" type="text" data-ng-model="param.value" placeholder="0.00"/>
+    </div>
+  </div>
+  
+  <input class="btn btn-primary btn-lg margin-t-10" type="submit" value="Добавить продукт" />
+</form>

@@ -16,7 +16,12 @@ angular.module('uHealth.food.service', [
         };
 
         factory.insert = function (product) {
-          return $http.post(urlBase, product);
+		  return $http({
+		  	method: 'post',
+		  	url: urlBase,
+		  	data: product,
+		  	headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
+		  })
         };
 
         factory.update = function (product) {
@@ -26,6 +31,31 @@ angular.module('uHealth.food.service', [
         factory.delete = function (id) {
           return $http.delete(urlBase + '/' + id);
         };
+		
+		factory.getParams = function() {
+		  return [
+			{
+				name: 'proteins',
+				title: 'Белки',
+				value: 0.00,
+			},
+			{
+				name: 'fats',
+				title: 'Жиры',
+				value: 0.00,
+			},
+			{
+				name: 'carbohydrates',
+				title: 'Углеводы',
+				value: 0.0,
+			},
+			{
+				name: 'kcal',
+				title: 'кКал',
+				value: 0.00,
+			}
+		  ];
+		};
 
         return factory;
       }

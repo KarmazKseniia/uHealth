@@ -31,37 +31,84 @@ angular.module('uHealth.food', [
 
               $scope.selectProduct = function () {
                 angular.extend(this.$parent.ingredient, this.p);
-                this.showProductList = false;
-              }
+                this.$parent.showProductList = false;
+				
+              };
+            }
+          })
+		  
+		  .state('products', {
+            url: '/products',
+            abstract: true,
+            templateUrl: PAGE_URL + 'products.html'
+          })
+		  
+		  .state('products.add', {
+            url: '/add',
+            templateUrl: PAGE_URL + 'products.add.html',
+            resolve: {
+              products: ['productFactory',
+                function (productFactory) {
+                  return productFactory.getList();
+                }]
+            },
+            controller: function ($scope, products) {
+              $scope.products = products.data.products;
             }
           });
       }
     ]
   )
+  .controller('addProductController', function ($scope, productFactory) {
+    $scope.productParams = productFactory.getParams();
+	$scope.saveProduct = function() {
+	  var data = $scope.product;
+	  for (var i = 0; i < $scope.productParams.length; i++) {
+	    data[$scope.productParams[i].name] = $scope.productParams[i].value;
+	  };
+	  
+	  productFactory.insert(data)
+	    .success(function(data) {
+          console.log(data);
+        })
+        .error(function(error) {
+          console.log(error);
+        });
+	};
+  })
   .controller('addRecipeController', function ($scope, recipeFactory) {
+	// ui settings //
+	var editor = CKEDITOR.replace('editorSteps', { // CKEDITOR.instances.editorSteps
+		language: 'ru',
+		uiColor: '#f0f0f0'
+	});
+	
     var INITIAL_INGREDIENTS_COUNT = 5;
+	$scope.recipe = {};
 
     $scope.ingredients = [];
     for (var i = 0; i < INITIAL_INGREDIENTS_COUNT; i++) {
       $scope.ingredients.push({});
-    }
+    };
 
     $scope.addIngredient = function () {
       $scope.ingredients.push({});
-    }
+    };
 
     $scope.saveRecipe = function () {
       var data = angular.extend($scope.recipe, {
         ingredients: $scope.ingredients.filter(function($v) { return !!$v.id; })
       });
-
+	  
+	  $scope.recipe.steps = editor.getData();
+	  
       recipeFactory.insert(data)
         .success(function(data) {
           console.log(data);
         })
         .error(function(error) {
           console.log(error);
-        })
-    }
+        });
+    };
   });
 

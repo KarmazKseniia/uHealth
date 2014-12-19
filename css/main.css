@@ -41,6 +41,25 @@ ul, ol {
   vertical-align: top;
 }
 
+.text-right {
+  text-align: right;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.margin-b-10 {
+  margin-bottom: 10px;
+}
+
+. margin-t-10 {
+  margin-top: 10px;
+}
 /* end bootstrap */
 
 /* general settings */
@@ -52,12 +71,17 @@ html, body {
 #content-wrapper {
   position: relative;
   min-height: 100%;
-  overflow-x: hidden;
+  min-width: 990px;
 }
 
 #content {
   margin: 0 auto;
   padding-bottom: 215px;
+}
+
+.container {
+    margin: 0 auto;
+    padding: 0 10px;
 }
 
 header {
@@ -189,6 +213,10 @@ footer .footer-block .footer-nav li a {
   padding-bottom: 40px;
 }
 
+.dropdown-menu {
+	left: 15px;
+	min-width: 350px;
+}
 /* end general settings */
 
 /* landing page */

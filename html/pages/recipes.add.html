@@ -1,32 +1,40 @@
-<form data-ng-controller="addRecipeController" data-ng-submit="saveRecipe()">
+<form data-ng-controller="addRecipeController" data-ng-submit="saveRecipe()" role="form" novalidate>
   <h2>Добавление рецепта</h2>
 
-  <input type="text" placeholder="Название блюда" data-ng-model="recipe.title"/>
-
-  <p>Ингридиенты:</p>
-
-
-  <div data-ng-repeat="ingredient in ingredients">
-    <input type="text" data-ng-model="ingredient.title" placeholder="Название продукта"
-           data-ng-focus="showProductList = true"/>
-    <input type="text" data-ng-model="ingredient.amount" placeholder="Количество"/>
-
-    <div data-ng-show="showProductList && ingredient.title.length > 2"
-         data-ng-include="'html/components/product-list.html'"></div>
-  </div>
-  <input type="button" value="Добавить продукт" data-ng-click="addIngredient()"/>
-
-  <div>
-    <textarea data-ng-model="recipe.description" placeholder="Описание"></textarea>
+  <div class="form-group form-group-lg">
+	<label>Название блюда</label>
+	<input class="form-control" type="text" placeholder="Название блюда" data-ng-model="recipe.title"/>
   </div>
 
-  <p>Приготовление:</p>
-
-  <div>
-    <textarea data-ng-model="recipe.steps" placeholder="Способ приготовления"></textarea>
+  <div class="form-group">
+	<label>Ингридиенты</label>
+	<div class="row relative margin-b-10" data-ng-repeat="ingredient in ingredients">
+	  <div class="col-xs-7">
+	    <input class="form-control" type="text" data-ng-model="ingredient.title" placeholder="Название продукта" data-ng-focus="showProductList = true"/>
+	  </div>
+	  <div class="col-xs-4">
+	    <input class="form-control" type="text" data-ng-model="ingredient.amount" placeholder="Количество"/>
+	  </div>
+	  <div class="col-xs-1 text-right">
+	    <input class="btn btn-default" type="button" value="-" />
+	  </div>
+	  <div data-ng-show="showProductList && ingredient.title.length > 2" data-ng-include="'html/components/product-list.html'"></div>
+	</div>
+	<input class="btn btn-default" type="button" value="Добавить продукт" data-ng-click="addIngredient()"/>
   </div>
+  
+  <div class="form-group">
+	<label>Описание</label>
+	<textarea class="form-control" data-ng-model="recipe.description" placeholder="Описание"></textarea>
+  </div>
+  
+  <div class="form-group">
+	<label>Приготовление</label>
+	 <textarea id="editorSteps" placeholder="Способ приготовления"></textarea>
+  </div>
+
 
   <!--<p>Категории:</p>-->
   <!--<input name="execution" placeholder="Категории"></textarea>||tags input-->
-  <input type="submit" value="Добавить рецепт" />
+  <input class="btn btn-primary btn-lg margin-t-10" type="submit" value="Добавить рецепт" />
 </form>

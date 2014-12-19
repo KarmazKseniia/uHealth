@@ -1,3 +1,5 @@
-<div data-ng-repeat="p in products | filter: { title: ingredient.title } | limitTo: 20">
-  <p data-ng-bind="p.title" data-ng-click="selectProduct()"></p>
-</div>
+<ul class="dropdown-menu show">
+  <li data-ng-repeat="p in products | filter: { title: ingredient.title } | limitTo: 20" 
+		data-ng-bind="p.title" 
+		data-ng-click="selectProduct()"></li>
+</ul>

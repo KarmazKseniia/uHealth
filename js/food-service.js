@@ -76,7 +76,12 @@ angular.module('uHealth.food.service', [
         };
 
         factory.insert = function (recipe) {
-          return $http.post(urlBase, recipe);
+		  return $http({
+		  	method: 'post',
+		  	url: urlBase,
+		  	data: recipe,
+		  	headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
+		  })
         };
 
         factory.update = function (recipe) {

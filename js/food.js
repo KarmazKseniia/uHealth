@@ -32,7 +32,7 @@ angular.module('uHealth.food', [
               $scope.selectProduct = function () {
                 angular.extend(this.$parent.ingredient, this.p);
                 this.$parent.showProductList = false;
-				
+				// TODO: select amount field
               };
             }
           })

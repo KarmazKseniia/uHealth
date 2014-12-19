@@ -1,4 +1,4 @@
 <section data-ng-repeat="recipe in recipes">
-	<h1 data-ng-bind="recipe.title"></h1>
+	<a ui-sref="recipes.details({ id: recipe.id })"><h1 data-ng-bind="recipe.title"></h1></a>
 	<p data-ng-bind="recipe.description"></p>
 </section>

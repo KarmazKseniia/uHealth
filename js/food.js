@@ -1,6 +1,7 @@
 angular.module('uHealth.food', [
     'ui.router'
   ])
+  .filter('unsafe', function($sce) { return $sce.trustAsHtml; })
   .config(
     [          '$stateProvider', '$urlRouterProvider',
       function ($stateProvider, $urlRouterProvider) {
@@ -10,6 +11,24 @@ angular.module('uHealth.food', [
             url: '/recipes',
             abstract: true,
             templateUrl: PAGE_URL + 'recipes.html'
+          })
+
+          .state('recipes.details', {
+            url: '/:id',
+            templateUrl: PAGE_URL + 'recipes.details.html',
+            resolve: {
+              recipe: ['recipeFactory', '$stateParams',
+                function (recipeFactory, $stateParams) {
+                  return recipeFactory.get($stateParams.id);
+                }]
+            },
+            controller: function ($scope, recipe, $sce) {
+              $scope.recipe = recipe.data.recipe[0];
+
+              $scope.renderHtml = function(htmlCode) {
+                return $sce.trustAsHtml(htmlCode);
+              };
+            }
           })
 
           .state('recipes.list', {
@@ -124,7 +143,7 @@ angular.module('uHealth.food', [
       uiColor: '#f0f0f0'
     });
 
-    var INITIAL_INGREDIENTS_COUNT = 5;
+    var INITIAL_INGREDIENTS_COUNT = 3;
     $scope.recipe = {};
 
     $scope.ingredients = [];

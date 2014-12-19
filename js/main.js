@@ -51,15 +51,13 @@ angular.module('uHealth', [
 		
 		$rootScope.$on('$stateChangeStart', function(event, toState, toParams, fromState, fromParams) {
 		  if (toState.resolve) {
-			console.log('show');
-			//$rootScope.showSpinner();
+		    $rootScope.showPageLoader = true;
 		  }
 		});
 		
 		$rootScope.$on('$stateChangeSuccess', function(event, toState, toParams, fromState, fromParams) {
 		  if (toState.resolve) {
-		    console.log('hide');
-			//$scope.hideSpinner();
+		    $rootScope.showPageLoader = false;
 		  }
 		});
       }

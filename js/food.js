@@ -13,24 +13,6 @@ angular.module('uHealth.food', [
             templateUrl: PAGE_URL + 'recipes.html'
           })
 
-          .state('recipes.details', {
-            url: '/:id',
-            templateUrl: PAGE_URL + 'recipes.details.html',
-            resolve: {
-              recipe: ['recipeFactory', '$stateParams',
-                function (recipeFactory, $stateParams) {
-                  return recipeFactory.get($stateParams.id);
-                }]
-            },
-            controller: function ($scope, recipe, $sce) {
-              $scope.recipe = recipe.data.recipe[0];
-
-              $scope.renderHtml = function(htmlCode) {
-                return $sce.trustAsHtml(htmlCode);
-              };
-            }
-          })
-
           .state('recipes.list', {
             url: '',
             templateUrl: PAGE_URL + 'recipes.list.html',
@@ -61,6 +43,24 @@ angular.module('uHealth.food', [
                 angular.extend(this.$parent.ingredient, this.p);
                 this.$parent.showProductList = false;
                 // TODO: select amount field
+              };
+            }
+          })
+
+          .state('recipes.details', {
+            url: '/:id',
+            templateUrl: PAGE_URL + 'recipes.details.html',
+            resolve: {
+              recipe: ['recipeFactory', '$stateParams',
+                function (recipeFactory, $stateParams) {
+                  return recipeFactory.get($stateParams.id);
+                }]
+            },
+            controller: function ($scope, recipe, $sce) {
+              $scope.recipe = recipe.data.recipe && recipe.data.recipe[0];
+
+              $scope.renderHtml = function(htmlCode) {
+                return $sce.trustAsHtml(htmlCode);
               };
             }
           })
@@ -140,7 +140,8 @@ angular.module('uHealth.food', [
     // ui settings //
     var editor = CKEDITOR.replace('editorSteps', { // CKEDITOR.instances.editorSteps
       language: 'ru',
-      uiColor: '#f0f0f0'
+      uiColor: '#f0f0f0',
+      filebrowserUploadUrl: 'resources/ckupload.php'
     });
 
     var INITIAL_INGREDIENTS_COUNT = 3;

@@ -1,5 +1,36 @@
-<section>
+﻿<section>
   <h1 data-ng-bind="recipe.title"></h1>
+  <div class="recipe-details">
+    <span>Сложность:<b data-ng-bind="recipe.complexity"></b></span>
+    <span>Время подготовки:<b data-ng-bind="recipe.preparationTime"></b></span>
+    <span>Общее время приготовления:<b data-ng-bind="recipe.cookingTime"></b></span>
+  </div>
+
+  <h2>Ингридиенты:</h2>
+  <div>
+    <table class="table table-striped">
+      <tr>
+        <th>Название продукта</th>
+        <th>Количество</th>
+        <th>Белки</th>
+        <th>Жиры</th>
+        <th>Углеводы</th>
+        <th>кКал</th>
+      </tr>
+      <tr data-ng-repeat="product in recipe.productList">
+        <td data-ng-bind="product.title"></td>
+        <td data-ng-bind="product.amount"></td>
+        <td data-ng-bind="product.proteins"></td>
+        <td data-ng-bind="product.fats"></td>
+        <td data-ng-bind="product.carbohydrates"></td>
+        <td data-ng-bind="product.kcal"></td>
+      </tr>
+    </table>
+  </div>
+
+  <h2>Описание:</h2>
   <p data-ng-bind="recipe.description"></p>
+
+  <h2>Приготовление:</h2>
   <div data-ng-bind-html="recipe.steps | unsafe"></div>
 </section>

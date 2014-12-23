@@ -145,6 +145,24 @@ angular.module('uHealth.food', [
   })
 
   .controller('addRecipeController', function ($scope, recipeFactory) {
+    var INITIAL_INGREDIENTS_COUNT = 3;
+    $scope.recipe = {};
+
+    $scope.ingredients = [];
+    for (var i = 0; i < INITIAL_INGREDIENTS_COUNT; i++) {
+      $scope.ingredients.push({});
+    }
+
+    $scope.addIngredient = function () {
+      $scope.ingredients.push({});
+    };
+
+    $scope.removeIngredient = function () {
+      $scope.ingredients.splice(this.$index, 1);
+    };
+
+    $('[data-toggle="tooltip"]').tooltip({ container: 'body' });
+
     $scope.saveRecipe = function () {
       var data = angular.extend($scope.recipe, {
         ingredients: $scope.ingredients.filter(function ($v) {
@@ -162,26 +180,6 @@ angular.module('uHealth.food', [
           console.log(error);
         });
     };
-  })
-
-  .controller('recipeItemController', function ($scope) {
-    var INITIAL_INGREDIENTS_COUNT = 3;
-    $scope.$parent.recipe = {};
-
-    $scope.$parent.ingredients = [];
-    for (var i = 0; i < INITIAL_INGREDIENTS_COUNT; i++) {
-      $scope.$parent.ingredients.push({});
-    }
-
-    $scope.addIngredient = function () {
-      $scope.$parent.ingredients.push({});
-    };
-
-    $scope.removeIngredient = function () {
-      $scope.$parent.ingredients.splice(this.$index, 1);
-    };
-
-    $('[data-toggle="tooltip"]').tooltip({container: 'body'});
   })
 
   .controller('CKEditorController', function ($scope, recipeFactory) {

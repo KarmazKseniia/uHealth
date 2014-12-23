@@ -4,7 +4,7 @@ angular.module('uHealth.food.service', [
   .factory('productFactory',
     [          '$http',
       function ($http) {
-        var urlBase = '/api/api/v1/product';
+        var urlBase = API_URL + '/product';
         var factory = {};
 
         factory.getList = function () {
@@ -69,7 +69,7 @@ angular.module('uHealth.food.service', [
   .factory('recipeFactory',
     [          '$http',
       function ($http) {
-        var urlBase = '/api/api/v1/recipe';
+        var urlBase = API_URL + '/recipe';
         var factory = {};
 
         factory.getList = function () {

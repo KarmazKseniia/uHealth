@@ -1,8 +1,12 @@
-<section data-ng-repeat="recipe in recipes">
+﻿<section data-ng-repeat="recipe in recipes">
   <h1>
     <a data-ng-bind="recipe.title" ui-sref="recipes.details({ id: recipe.id })"></a>
     <i class="glyphicon glyphicon-pencil pointer" ui-sref="recipes.edit({ id: recipe.id })"></i>
   </h1>
-
+  <div class="recipe-details">
+    <span>Сложность:<b data-ng-bind="recipe.complexity"></b></span>
+    <span>Время подготовки:<b data-ng-bind="recipe.preparationTime"></b></span>
+    <span>Общее время приготовления:<b data-ng-bind="recipe.cookingTime"></b></span>
+  </div>
   <p data-ng-bind="recipe.description"></p>
 </section>

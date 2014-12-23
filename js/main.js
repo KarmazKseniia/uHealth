@@ -1,4 +1,5 @@
 var PAGE_URL = 'html/pages/';
+var API_URL = '/uh/api/api/v1';
 var routes = [
   {
     url: '/',
